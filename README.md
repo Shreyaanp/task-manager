@@ -56,7 +56,7 @@ Open http://localhost:3000 with your browser to see the result.
 - utils/: Helper functions and custom utilities, including the debounce function and rate limiter setup.
 
 ## PostMan Curl Test for Backend Api :
--create a New task
+- Create a New task
 ```bash
 curl -X POST http://localhost:3000/api/tasks \
 -H 'Content-Type: application/json' \
@@ -67,11 +67,11 @@ curl -X POST http://localhost:3000/api/tasks \
 }'
 
 ```
--Retrieve All tasks
+- Retrieve All tasks
 ```bash
 curl -X GET http://localhost:3000/api/tasks
 ```
--update an existing task(you have add the task ID)
+- Update an existing task(you have add the task ID)
 ```bash
 curl -X PUT http://localhost:3000/api/tasks/<TASK_ID> \
 -H 'Content-Type: application/json' \
@@ -81,7 +81,7 @@ curl -X PUT http://localhost:3000/api/tasks/<TASK_ID> \
     "status": "In Progress"
 }'
 ```
-Remove a task(you have add the task ID)
+- Remove a task(you have add the task ID)
 ```bash
 curl -X DELETE http://localhost:3000/api/tasks/<TASK_ID>
 ```
