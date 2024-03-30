@@ -1,0 +1,17 @@
+/* TaskList.module.css */
+.taskContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  @media (min-width: 768px) {
+    .taskContainer {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  

@@ -18,7 +18,10 @@ const TaskForm = ({ onAddTask }) => {
   };
 
   return (
-    <div className="my-4">
+    <div className="my-4 mx-auto max-w-xl px-4">
+      <h1
+      className="text-2xl font-bold text-center mb-4"
+      >Task Manager</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block">Title</label>

@@ -37,7 +37,7 @@ const TaskList = ({ tasks, onUpdateTask, onDeleteTask }) => {
   return (
     <div className="my-4">
       {tasks.map((task) => (
-        <div key={task._id} className="flex items-center justify-between p-4 mb-2 border rounded">
+        <div key={task._id} className="flex flex-col md:flex-row items-center justify-between p-4 mb-2 border rounded">
           <div>
             <input
               type="text"
@@ -75,7 +75,7 @@ const TaskList = ({ tasks, onUpdateTask, onDeleteTask }) => {
           </div>
           <button
             onClick={() => onDeleteTask(task._id)}
-            className="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-700"
+            className="mt-4 md:mt-0 px-4 py-2 text-white bg-red-500 rounded hover:bg-red-700"
             disabled={updating[task._id]}
           >
             Delete

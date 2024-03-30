@@ -3,6 +3,7 @@ import TaskForm from "../components/TaskForm";
 import TaskList from "../components/TaskList";
 import debounce from "lodash.debounce";
 import Alert from "../components/Alert";
+import Head from "next/head";
 
 const HomePage = () => {
   const [tasks, setTasks] = useState([]);
@@ -51,10 +52,15 @@ const HomePage = () => {
         },
         body: JSON.stringify({ _id: id, ...updates }),
       });
-
-      if (!res.ok) {
-        console.error("Failed to update the task");
-        fetchTasks(); // Ensure UI is in sync with the server
+      if(res.ok){
+        setAlertMessage("Task updated successfully!");
+        setAlertType("success");
+        setShowAlert(true);
+      }
+      else{
+        setAlertMessage("Failed to update task");
+        setAlertType("delete");
+        setShowAlert(true);
       }
     }, 500),
     []
@@ -93,6 +99,9 @@ const HomePage = () => {
 
   return (
     <div className="container mx-auto px-4">
+      <Head>
+        <title>Task Manager</title>
+      </Head>
       <TaskForm onAddTask={addTask} />
       {tasks ? <TaskList tasks={tasks} onUpdateTask={updateTask} onDeleteTask={deleteTask} /> : <p>Loading...</p>}
       <Alert message={alertMessage} type={alertType} show={showAlert} setShow={setShowAlert} />
