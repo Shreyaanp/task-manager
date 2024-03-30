@@ -93,6 +93,15 @@ Debouncing is a programming practice used to ensure that time-consuming tasks do
 ## Rate Limiting
 Rate limiting is used to control the amount of incoming requests to a server within a certain timeframe. This is crucial for preventing abuse and ensuring the service remains available to all users. In the Next.js Task Manager, rate limiting is applied to the API routes to prevent excessive requests that could lead to Denial of Service (DoS) attacks or degrade the application's performance. It's implemented using the rate-limiter-flexible package, ensuring that users can't make more than a specified number of requests to the API within a given period.
 
+## Testing API 
+```bash 
+npm test
+```
+run the above code to test check the api. you need to enter your MongoURI here manually.
+![Screenshot from 202sdfsdf4-03-30 12-23-28](https://github.com/Shreyaanp/task-manager/assets/79451850/c72a9036-edcf-4dcd-ba41-24f95827e097)
+
+
+
 ## Contributing 🤝
 Contributions, issues, and feature requests are welcome! Feel free to check issues page. For major changes, please open an issue first to discuss what you would like to change.
 
