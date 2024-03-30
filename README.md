@@ -22,21 +22,34 @@ A simple, intuitive task management application built with Next.js. This project
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/nextjs-task-manager.git
+git clone https://github.com/Shreyaanp/task-manager.git
 cd nextjs-task-manager
 
-npm install
-# or
-yarn install
-
-npm run dev
-# or
-yarn dev
 ```
+2. **Create a .env**
+   ```bash
+   create a file called .env in the root of the project
+   then add your MongoDN URI like this :
+   MONGODB_URI= your_MongoDB_URI
+   ```
+3. **Install Necessary packages**
+
+   ```bash
+    npm install
+    # or
+    yarn install
+   ```
+4. **To Run the application Locally**
+
+   ```bash
+    npm run dev
+    # or
+    yarn dev
+   ```
 Open http://localhost:3000 with your browser to see the result.
 
 ## Folder Structure 📁
-- components/: Reusable UI components like TaskForm and TaskList.
+- components/: Reusable UI components like TaskForm, TaskList and Alert.
 - lib/: Utility functions and library integrations, including MongoDB connections.
 - pages/: Next.js pages and API routes. It includes the main page and the API logic for task operations.
 - styles/: Global styles and CSS/SCSS modules for styling components.
