@@ -54,6 +54,38 @@ Open http://localhost:3000 with your browser to see the result.
 - pages/: Next.js pages and API routes. It includes the main page and the API logic for task operations.
 - styles/: Global styles and CSS/SCSS modules for styling components.
 - utils/: Helper functions and custom utilities, including the debounce function and rate limiter setup.
+
+## PostMan Curl Test for Backend Api :
+-create a New task
+```bash
+curl -X POST http://localhost:3000/api/tasks \
+-H 'Content-Type: application/json' \
+-d '{
+    "title": "Learn Node.js",
+    "description": "Start with the basics of Node.js",
+    "status": "To Do"
+}'
+
+```
+-Retrieve All tasks
+```bash
+curl -X GET http://localhost:3000/api/tasks
+```
+-update an existing task(you have add the task ID)
+```bash
+curl -X PUT http://localhost:3000/api/tasks/<TASK_ID> \
+-H 'Content-Type: application/json' \
+-d '{
+    "title": "Learn Node.js (Updated)",
+    "description": "Learn advanced Node.js concepts",
+    "status": "In Progress"
+}'
+```
+Remove a task(you have add the task ID)
+```bash
+curl -X DELETE http://localhost:3000/api/tasks/<TASK_ID>
+```
+
 ### Key Concepts Explained
 ## Debouncing
 Debouncing is a programming practice used to ensure that time-consuming tasks do not fire so often, which can hurt performance, especially in cases like server calls. In this application, debouncing is applied to task updates, which means that if a user rapidly changes a task's status, it will not send a request to the server on each change. Instead, it waits until the user has stopped making changes for a specific amount of time before making a single request. This is particularly useful for tasks like search or in this case, updating tasks, where you don't want to overload the server with requests.
